@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap
 //= require google_earth_api
 //= require_tree .
