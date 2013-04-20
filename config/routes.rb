@@ -1,6 +1,6 @@
 Moontour::Application.routes.draw do
   resources :moon_images do
-    member do
+    collection do
       get 'query_on_time'
     end
   end
