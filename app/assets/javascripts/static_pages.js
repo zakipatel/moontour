@@ -7,6 +7,11 @@ $(function(){
     google.earth.createInstance('map3d', initCB, failureCB, { database: 'http://khmdb.google.com/?db=moon' })
    }
 
+   function addNetworkLinks(links) {
+      for(var i =0; i < links.length; i++) {
+        addNetworkLink(links[i]);
+      }
+   }
 
   function addNetworkLink(linkHref) {
     var networkLink = ge.createNetworkLink("");
@@ -56,16 +61,17 @@ $(function(){
     });
 
   $(".date_submit").click(function(){
-    start_time = $('#start_time').val();
-    end_time = $('#end_time').val();
+    start_time = new Date($("#start_time").val()).getTime() / 1000;
+    end_time = new Date($("#start_time").val()).getTime() / 1000;
 
     $.ajax({
       type: 'get',
       url: '/moon_images/query_on_time',
       data: 'from=' + start_time + '&to=' + end_time
     }).success(function(data) {
-      console.log(data[0]);
-    }).error(function(data){
+      addNetworkLinks(data);
+    })
+    .error(function(data){
       alert("Error");
     });
 
