@@ -1,0 +1,16 @@
+defaults: &defaults
+  adapter: postgresql
+  host: localhost
+
+development: &development
+  <<: *defaults
+  database: moontour-dev
+
+test:
+  <<: *defaults
+  database: moontour-test
+
+production:
+  <<: *defaults
+  database: moontour
+
