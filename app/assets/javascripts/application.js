@@ -12,4 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require google_earth_api
 //= require_tree .
