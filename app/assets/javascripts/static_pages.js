@@ -6,9 +6,9 @@ $(function(){
   function init() {
 
     google.earth.createInstance('map3d', initCB, failureCB, { database: 'http://khmdb.google.com/?db=moon' })
-    var allTextLines = url;
-    var lines = $.csv.toArray(allTextLines);
-    addSampleButton(lines[1][25], buttonClick)
+    // var allTextLines = url;
+    // var lines = $.csv.toArray(allTextLines);
+    // addSampleButton(lines[1][25], buttonClick)
    }
 
   function buttonClick4() {
