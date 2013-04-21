@@ -1,12 +1,15 @@
-#sample-ui
-#map3d{:style => "height: 400px; width: 600px;"}
+#sample-ui{:style => "display: none"}
+%h1 Welcome to the tour of the moon
+#map3d{:style => "height: 600px; width: 800px; margin: 0 auto"}
 
-= text_field_tag :start_time
-= text_field_tag :end_time
+.time_form
+  = text_field_tag :start_time, nil, :placeholder => 'Start Date'
+  = text_field_tag :end_time, nil, :placeholder => 'End Date'
 
-%button.date_submit.btn Submit
+  %button.date_submit.btn Submit
 
-= text_field_tag :lat
-= text_field_tag :lon
+.coords_form
+  = text_field_tag :lat, nil, :placeholder => 'Lattitude'
+  = text_field_tag :lon, nil, :placeholder => 'Longitude'
 
-%button.coords_submit.btn Submit
+  %button.coords_submit.btn Submit
