@@ -77,7 +77,22 @@ $(function(){
 
   });
 
+  $(".coords_submit").click(function(){
+    lat = $("#lat").val();
+    lon = $("#lon").val();
 
+    $.ajax({
+      type: 'get',
+      url: '/moon_images/query_on_coords',
+      data: 'lat=' + lat + '&lon=' + lon
+    }).success(function(data) {
+      addNetworkLinks(data);
+    })
+    .error(function(data){
+      alert("Error");
+    });
+
+  });
 
     function initCB(instance) {
       ge = instance;

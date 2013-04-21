@@ -2,6 +2,7 @@ Moontour::Application.routes.draw do
   resources :moon_images do
     collection do
       get 'query_on_time'
+      get 'query_on_coords'
     end
   end
   # The priority is based upon order of creation:

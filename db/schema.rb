@@ -11,13 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130420210205) do
+ActiveRecord::Schema.define(:version => 20130420234658) do
 
   create_table "moon_images", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.datetime "taken_at"
     t.string   "kml_link"
+    t.float    "center_lng"
+    t.float    "center_lat"
+    t.float    "nadir_lng"
+    t.float    "nadir_lat"
+    t.float    "corner1_lng"
+    t.float    "corner1_lat"
+    t.float    "corner2_lng"
+    t.float    "corner2_lat"
+    t.float    "corner3_lng"
+    t.float    "corner3_lat"
+    t.float    "corner4_lng"
+    t.float    "corner4_lat"
+    t.float    "altitude"
+    t.integer  "lens_size"
+    t.float    "frame_width"
+    t.float    "frame_height"
+    t.string   "mission_name"
+    t.string   "spacecraft"
+    t.string   "camera_dir"
+    t.integer  "orbit_num"
+    t.string   "image_link"
   end
 
   add_index "moon_images", ["taken_at"], :name => "index_moon_images_on_taken_at"
