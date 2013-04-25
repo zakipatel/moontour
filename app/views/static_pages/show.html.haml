@@ -1,15 +1,25 @@
-#sample-ui{:style => "display: none"}
+
 %h1 Welcome to the tour of the moon
+#sample-ui{:style => "height: 10px; width: 1000px; margin: 0 auto"}
+
+.buttons_form
+  %button.terrain_submit.btn Terrain Elevation
+  %button.craters_submit.btn Craters
+  %button.lambert_submit.btn Fly to Lambert  
+  %button.aitken_submit.btn Fly to Aitken Basin 
+  %button.simpleoverlay_submit.btn MoonKAM Basic Overlay 
+  
 #map3d{:style => "height: 600px; width: 800px; margin: 0 auto"}
 
 .time_form
   = text_field_tag :start_time, nil, :placeholder => 'Start Date'
   = text_field_tag :end_time, nil, :placeholder => 'End Date'
 
-  %button.date_submit.btn Submit
+  %button.date_submit.btn By Date/Time
 
 .coords_form
-  = text_field_tag :lat, nil, :placeholder => 'Lattitude'
+  = text_field_tag :lat, nil, :placeholder => 'Latitude'
   = text_field_tag :lon, nil, :placeholder => 'Longitude'
 
-  %button.coords_submit.btn Submit
+  %button.coords_submit.btn By Location
+
